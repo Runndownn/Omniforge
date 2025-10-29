@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "windows-terminal-portable-profile"
+version = "1.0.0"
+description = "Portable Windows Terminal and WSL profile exporter"
+authors = [
+  {name = "Runndownn"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["windows-terminal", "wsl", "portable", "zsh"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Environment :: Console"
+]
+dependencies = [
+  "pyyaml>=6.0",
+  "rich>=13.9",
+  "typer>=0.9,<1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4",
+  "pytest-mock>=3.11",
+  "mypy>=1.11",
+  "ruff>=0.6",
+  "types-PyYAML"
+]
+
+[tool.setuptools]
+packages = ["tool"]
+
+[project.scripts]
+wt-portable = "tool.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = "-ra"
+cache_dir = "tmp/pytest_cache"
+
+[tool.ruff]
+select = ["E", "F", "I", "N", "W", "UP", "PL", "RUF"]
+ignore = ["E501"]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_configs = true
+warn_return_any = true
+warn_unused_ignores = true
+strict_optional = true
+namespace_packages = true
+warn_unreachable = true
+mypy_path = "."

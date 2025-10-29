@@ -1,0 +1,113 @@
+Metadata-Version: 2.4
+Name: windows-terminal-portable-profile
+Version: 1.0.0
+Summary: Portable Windows Terminal and WSL profile exporter
+Author: Runndownn
+Keywords: windows-terminal,wsl,portable,zsh
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Environment :: Console
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: rich>=13.9
+Requires-Dist: typer<1.0,>=0.9
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: pytest-mock>=3.11; extra == "dev"
+Requires-Dist: mypy>=1.11; extra == "dev"
+Requires-Dist: ruff>=0.6; extra == "dev"
+Requires-Dist: types-PyYAML; extra == "dev"
+Dynamic: license-file
+
+# Windows Terminal Portable Profile
+
+A GitHub-driven, menu-based toolkit that captures your current Windows Terminal configuration, produces a sanitized portable Zsh profile for WSL, and republishes the bundle so any machine can install it in either destructive (default) or side-by-side modes. The CLI is designed for security-conscious operators who want to preserve their look-and-feel without leaking personal data.
+
+## Features
+
+- **One command export** of Windows Terminal `settings.json`, background assets, and font metadata.
+- **Deterministic sanitization** of your `.zshrc` that preserves themes, prompts, and aliases while stripping secrets, tokens, absolute paths, and red-flag tooling.
+- **Menu-driven installer** capable of provisioning prerequisites (Windows Terminal, WSL, Oh My Zsh, fonts) and applying the bundle in default or copy mode with automatic backups.
+- **GitHub release publisher** that versions artifacts, produces SBOM metadata, and packages an offline-ready ZIP for others to consume.
+- **Privacy guardrails**: manifests include hashes, provenance, and a documented sanitization report for auditability.
+
+## Quick Start
+
+```powershell
+# PowerShell (admin not required, but recommended for winget installs)
+git clone https://github.com/runndownn/windows-terminal-portable-profile.git
+cd windows-terminal-portable-profile
+python -m tool.cli --menu
+```
+
+From WSL you can run:
+
+```bash
+python3 -m tool.cli --menu
+```
+
+The menu guides you through exporting settings, sanitizing `.zshrc`, installing prerequisites, applying defaults, and publishing to GitHub.
+
+## Repository Layout
+
+```text
+windows-terminal-portable-profile/
+├─ README.md
+├─ LICENSE
+├─ pyproject.toml
+├─ requirements.txt
+├─ Makefile
+├─ docs/
+│  ├─ SANITIZATION_REPORT.md
+│  ├─ DIAGRAMS.md
+│  └─ USAGE.md
+├─ artifacts/
+│  ├─ settings.json
+│  ├─ zshrc.portable
+│  ├─ manifest.json
+│  ├─ fonts/
+│  └─ assets/
+├─ vendor/
+│  ├─ oh-my-zsh/
+│  └─ plugins/
+├─ scripts/
+│  ├─ install_prereqs.ps1
+│  ├─ install_wsl.sh
+│  └─ apply_local.sh
+├─ tool/
+│  ├─ __init__.py
+│  ├─ cli.py
+│  ├─ exporter.py
+│  ├─ sanitizer.py
+│  ├─ applier.py
+│  ├─ installer.py
+│  ├─ github_publisher.py
+│  └─ validators.py
+└─ .github/workflows/release.yml
+```
+
+## Safety First
+
+- Every destructive action performs a timestamped backup into `~/.wt-portable/backups` (Windows) or `~/wt-portable/backups` (WSL) before touching live files.
+- Sanitization rules remove absolute user paths, tokens, emails, SSH material, and any alias referencing offensive/security tooling.
+- Git operations default to dry-run; you must opt-in to pushes or releases.
+- The manifest logs every generated file with SHA-256 checksums so consumers can validate integrity.
+
+## Documentation
+
+- [Usage guide](docs/USAGE.md) walks through typical flows with screenshots and troubleshooting.
+- [Diagrams](docs/DIAGRAMS.md) capture exporter, sanitizer, and apply modes in Mermaid format.
+- [SANITIZATION_REPORT](docs/SANITIZATION_REPORT.md) details what was removed and what was retained in the public artifacts.
+
+## Contributing
+
+1. Fork the repository and create a feature branch.
+2. Run `make lint test` before submitting PRs.
+3. Document any new sanitization rules in `docs/SANITIZATION_REPORT.md` and update `artifacts/manifest.json` hashes.
+
+## License
+
+This project is released under the MIT License. Third-party components (Oh My Zsh, plugins, fonts) retain their respective licenses; see `vendor/` for notices.

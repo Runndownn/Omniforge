@@ -1,0 +1,1 @@
+- 2025-10-29 06:44:26Z: Sanitized profile from D:\Github_Projects\TermSync-v0.0.2\windows-terminal-portable-profile\tmp\pytest\test_strip_denylisted_aliases0\.zshrc to artifacts/zshrc.portable

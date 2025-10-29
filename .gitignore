@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+.mypy_cache/
+pytest_cache/
+artifacts/backups/
+artifacts/*.bak
+artifacts/*.tmp
+vendor/oh-my-zsh/.git
+vendor/plugins/*/.git
+release/
+.dist/
+.zip

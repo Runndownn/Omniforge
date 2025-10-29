@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-10-29T00:00:00Z",
+  "source_machine": "sanitized",
+  "artifacts": [
+    {
+      "name": "Windows Terminal settings",
+      "path": "artifacts/settings.json",
+      "sha256": "a2831ed7d3a1e461a91ef6c142eb900644c5f5de46fe3c28e361163aed0a536d"
+    },
+    {
+      "name": "Portable Zsh profile",
+      "path": "artifacts/zshrc.portable",
+      "sha256": "01bccc0dfea08c8289dd6e98620c7829001b27654063eac57d1842e33bb6d28a"
+    }
+  ],
+  "rulesets": [
+    {
+      "id": "zsh-sanitizer-2025-10",
+      "description": "Removes PII, credentials, and offensive tooling aliases while preserving theme and prompt.",
+      "reference": "docs/SANITIZATION_REPORT.md"
+    },
+    {
+      "id": "wt-export-2025-10",
+      "description": "Captures settings.json, copies redistributable assets, normalizes profile IDs.",
+      "reference": "tool/exporter.py"
+    }
+  ],
+  "notes": "Fonts and large assets are distributed separately; see docs/USAGE.md for installation commands."
+}

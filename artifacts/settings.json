@@ -1,0 +1,66 @@
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "defaultProfile": "{6fd0b4a5-95a6-46ed-9ad4-71fb4c6d9d25}",
+  "copyOnSelect": false,
+  "launchMode": "maximized",
+  "theme": "system",
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Runndownn-Neon",
+      "font": {
+        "face": "CaskaydiaCove NF",
+        "size": 11
+      },
+      "opacity": 90,
+      "useAcrylic": true,
+      "cursorShape": "filledBox",
+      "suppressApplicationTitle": true
+    },
+    "list": [
+      {
+        "name": "Runndownn Portable",
+        "guid": "{6fd0b4a5-95a6-46ed-9ad4-71fb4c6d9d25}",
+        "commandline": "wsl.exe -d Ubuntu-22.04 --exec /bin/zsh",
+        "startingDirectory": "\\\\wsl$\\Ubuntu-22.04\\home\\$USER",
+        "icon": "ms-appdata:///roaming/runndownn-portable.png",
+        "hidden": false
+      },
+      {
+        "name": "Windows PowerShell",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "commandline": "powershell.exe",
+        "hidden": false
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "name": "Runndownn-Neon",
+      "foreground": "#E8E8E8",
+      "background": "#101020",
+      "selectionBackground": "#2E8BFF",
+      "cursorColor": "#00F4FF",
+      "black": "#101020",
+      "red": "#FF5C57",
+      "green": "#5AF78E",
+      "yellow": "#F3F99D",
+      "blue": "#57C7FF",
+      "purple": "#FF6AC1",
+      "cyan": "#9AEDFE",
+      "white": "#F1F1F0",
+      "brightBlack": "#686868",
+      "brightRed": "#FF6E67",
+      "brightGreen": "#5AF78E",
+      "brightYellow": "#F4F99D",
+      "brightBlue": "#57C7FF",
+      "brightPurple": "#FF92D0",
+      "brightCyan": "#9AEDFE",
+      "brightWhite": "#F1F1F0"
+    }
+  ],
+  "globalSummon": {
+    "action": "toggle",
+    "desktop": "toCurrent",
+    "monitor": "any"
+  }
+}

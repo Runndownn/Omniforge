@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-10-29T06:44:26Z",
+  "source_machine": "sanitized",
+  "artifacts": [
+    {
+      "name": "Portable Zsh profile",
+      "path": "artifacts/zshrc.portable",
+      "sha256": "bd1ae0c2fb19fba3a2ab0dd41e985433db045dc4ad5fb3559ffa3c65dd52f8e5"
+    }
+  ]
+}
