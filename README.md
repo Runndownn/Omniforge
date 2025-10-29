@@ -1,4 +1,4 @@
-# Windows Terminal Portable Profile
+# Omniforge
 
 > A reproducible, privacy-conscious toolkit for exporting your Windows Terminal experience, sanitizing personal data, and reinstalling it anywhere through a single Typer-powered CLI.
 
@@ -55,8 +55,8 @@ Windows Terminal personalizations are often locked to a single machine. This pro
 
 ```powershell
 cd $env:USERPROFILE\Documents
-git clone https://github.com/runndownn/windows-terminal-portable-profile.git
-cd windows-terminal-portable-profile
+git clone https://github.com/runndownn/Omniforge.git
+cd Omniforge
 py -3.11 -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install --upgrade pip
@@ -66,8 +66,8 @@ pip install -r requirements.txt
 WSL users can run the equivalent:
 
 ```bash
-git clone https://github.com/runndownn/windows-terminal-portable-profile.git
-cd windows-terminal-portable-profile
+git clone https://github.com/runndownn/Omniforge.git
+cd Omniforge
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip

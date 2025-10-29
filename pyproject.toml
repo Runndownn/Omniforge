@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "windows-terminal-portable-profile"
+name = "omniforge"
 version = "1.0.0"
 description = "Portable Windows Terminal and WSL profile exporter"
 authors = [
@@ -37,7 +37,7 @@ dev = [
 packages = ["tool"]
 
 [project.scripts]
-wt-portable = "tool.cli:main"
+omniforge = "tool.cli:main"
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
