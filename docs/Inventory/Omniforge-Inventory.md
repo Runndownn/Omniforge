@@ -4,9 +4,9 @@
 
 Repository name: Omniforge (derived from folder name and Git remote)
 
-Inventory date/time: 2026-03-03T08:38:02+00:00
+Inventory date/time: 2026-03-03T08:59:12+00:00
 
-Commit hash / branch / dirty state: 1c1262a893ae4d16b4d08602ca47b944b7bc8df9 / master / Dirty (untracked: Omniforge.code-workspace)
+Commit hash / branch / dirty state: 697ebae535ce5403c87f6289dbb860eaf7e2f251 (base snapshot commit) / backup/workspace-snapshot-20260303 / Dirty (untracked: Omniforge.code-workspace, geezer_data.instructions.md, tmp/InventoryPacket/, tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz, tmp/checksums_sha256.txt, tmp/inventory_phase2.tsv)
 
 Environment used: OS Linux (user-provided), shell bash (context). Tool versions: Unknown from available evidence.
 
@@ -80,7 +80,7 @@ This diagram summarizes the observed module interactions: the CLI orchestrates d
 - Path: [docs](docs) | Type: dir | Size: 4096 bytes | Mtime: 2026-03-03T08:38:37.868682+00:00 | Role/purpose: Documentation set | Language/entrypoint: N/A | Dependencies: tool/* modules | Classification: Authored here | Flags: none
 - Path: [docs/DIAGRAMS.md](docs/DIAGRAMS.md) | Type: file (.md) | Size: 1919 bytes | Mtime: 2025-12-04T23:01:21.296126+00:00 | Role/purpose: Architecture diagrams | Language/entrypoint: Markdown | Dependencies: tool/README.md | Classification: Authored here | Flags: none
 - Path: [docs/Inventory](docs/Inventory) | Type: dir | Size: 4096 bytes | Mtime: 2026-03-03T08:38:37.920681+00:00 | Role/purpose: Repository inventory artifacts | Language/entrypoint: N/A | Dependencies: Inventory process | Classification: Generated (audit output) | Flags: evidence artifact
-- Path: [docs/Inventory/Omniforge-Inventory.md](docs/Inventory/Omniforge-Inventory.md) | Type: file (.md) | Size: 3761 bytes | Mtime: 2026-03-03T08:39:02.780433+00:00 | Role/purpose: Inventory and provenance packet in progress | Language/entrypoint: Markdown | Dependencies: Repository audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [docs/Inventory/Omniforge-Inventory.md](docs/Inventory/Omniforge-Inventory.md) | Type: file (.md) | Size: 55637 bytes | Mtime: 2026-03-03T08:57:07.321596+00:00 | Role/purpose: Inventory and provenance packet in progress | Language/entrypoint: Markdown | Dependencies: Repository audit process | Classification: Generated (audit output) | Flags: evidence artifact
 - Path: [docs/README.md](docs/README.md) | Type: file (.md) | Size: 1734 bytes | Mtime: 2025-12-04T23:01:21.296126+00:00 | Role/purpose: Documentation index and update guidance | Language/entrypoint: Markdown | Dependencies: tool/sanitizer.py, tool/cli.py | Classification: Authored here | Flags: none
 - Path: [docs/SANITIZATION_REPORT.md](docs/SANITIZATION_REPORT.md) | Type: file (.md) | Size: 1529 bytes | Mtime: 2025-12-04T23:01:21.296126+00:00 | Role/purpose: Append-only sanitization ledger | Language/entrypoint: Markdown | Dependencies: tool/sanitizer.py | Classification: Authored here | Flags: audit log
 - Path: [docs/USAGE.md](docs/USAGE.md) | Type: file (.md) | Size: 3251 bytes | Mtime: 2025-12-04T23:01:21.296126+00:00 | Role/purpose: Operator usage guide | Language/entrypoint: Markdown | Dependencies: tool/cli.py | Classification: Authored here | Flags: none
@@ -103,6 +103,16 @@ This diagram summarizes the observed module interactions: the CLI orchestrates d
 - Path: [tmp/README.md](tmp/README.md) | Type: file (.md) | Size: 1000 bytes | Mtime: 2025-12-04T23:01:21.296126+00:00 | Role/purpose: Explains temp layout and cleanup guidance | Language/entrypoint: Markdown | Dependencies: pytest, pyproject.toml | Classification: Authored here | Flags: none
 - Path: [tmp/inventory_phase2.tsv](tmp/inventory_phase2.tsv) | Type: file (.tsv) | Size: 5618 bytes | Mtime: 2026-03-03T08:40:21.003652+00:00 | Role/purpose: Phase 2 inventory evidence output | Language/entrypoint: TSV | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
 - Path: [tmp/checksums_sha256.txt](tmp/checksums_sha256.txt) | Type: file (.txt) | Size: 5719 bytes | Mtime: 2026-03-03T08:49:31.090158+00:00 | Role/purpose: SHA-256 checksum manifest for repository files | Language/entrypoint: Plain text | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket](tmp/InventoryPacket) | Type: dir | Size: 4096 bytes | Mtime: 2026-03-03T08:52:51.608154+00:00 | Role/purpose: Staging directory for evidentiary archive | Language/entrypoint: N/A | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303](tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303) | Type: dir | Size: 4096 bytes | Mtime: 2026-03-03T08:52:51.612154+00:00 | Role/purpose: Inventory packet root | Language/entrypoint: N/A | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/README.txt](tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/README.txt) | Type: file (.txt) | Size: 179 bytes | Mtime: 2026-03-03T08:57:00.653663+00:00 | Role/purpose: Inventory packet index | Language/entrypoint: Plain text | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/report](tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/report) | Type: dir | Size: 4096 bytes | Mtime: 2026-03-03T08:52:51.612154+00:00 | Role/purpose: Inventory report staging | Language/entrypoint: N/A | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/report/Omniforge-Inventory.md](tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/report/Omniforge-Inventory.md) | Type: file (.md) | Size: 55637 bytes | Mtime: 2026-03-03T08:56:41.413855+00:00 | Role/purpose: Inventory report copy for archive | Language/entrypoint: Markdown | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/evidence](tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/evidence) | Type: dir | Size: 4096 bytes | Mtime: 2026-03-03T08:52:51.612154+00:00 | Role/purpose: Inventory evidence staging | Language/entrypoint: N/A | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/evidence/inventory_phase2.tsv](tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/evidence/inventory_phase2.tsv) | Type: file (.tsv) | Size: 5618 bytes | Mtime: 2026-03-03T08:40:21.003653+00:00 | Role/purpose: Inventory evidence copy for archive | Language/entrypoint: TSV | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/manifests](tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/manifests) | Type: dir | Size: 4096 bytes | Mtime: 2026-03-03T08:52:51.612154+00:00 | Role/purpose: Checksum manifest staging | Language/entrypoint: N/A | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/manifests/checksums_sha256.txt](tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303/manifests/checksums_sha256.txt) | Type: file (.txt) | Size: 5719 bytes | Mtime: 2026-03-03T08:49:31.090158+00:00 | Role/purpose: Checksum manifest copy for archive | Language/entrypoint: Plain text | Dependencies: Audit process | Classification: Generated (audit output) | Flags: evidence artifact
+- Path: [tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz](tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz) | Type: file (.tar.gz) | Size: 15513 bytes | Mtime: 2026-03-03T08:57:04.429625+00:00 | Role/purpose: Final evidentiary archive | Language/entrypoint: Compressed tarball | Dependencies: Audit process | Classification: Generated (audit output) | Flags: compressed archive
 - Path: [tmp/pytest](tmp/pytest) | Type: dir | Size: 4096 bytes | Mtime: 2025-12-04T23:01:21.300126+00:00 | Role/purpose: pytest base temp directory | Language/entrypoint: N/A | Dependencies: pytest | Classification: Cache/Generated | Flags: transient
 - Path: [tmp/pytest/README.md](tmp/pytest/README.md) | Type: file (.md) | Size: 828 bytes | Mtime: 2025-12-04T23:01:21.300126+00:00 | Role/purpose: Explains pytest temp usage | Language/entrypoint: Markdown | Dependencies: pytest | Classification: Authored here | Flags: none
 - Path: [tmp/pytest/test_strip_denylisted_aliases0](tmp/pytest/test_strip_denylisted_aliases0) | Type: dir | Size: 4096 bytes | Mtime: 2025-12-04T23:01:21.300126+00:00 | Role/purpose: pytest run fixture output | Language/entrypoint: N/A | Dependencies: pytest | Classification: Cache/Generated | Flags: transient
@@ -188,7 +198,7 @@ Checksum manifest:
 - Exclusions: `.git/` (VCS metadata; large, mutable); checksum manifest file (self-referential).
 
 Chain-of-custody note:
-- Snapshot derived from the current working tree at [Omniforge](.) with an observed dirty state (untracked Omniforge.code-workspace). Audit artifacts created during this session include [docs/Inventory/Omniforge-Inventory.md](docs/Inventory/Omniforge-Inventory.md), [tmp/inventory_phase2.tsv](tmp/inventory_phase2.tsv), and [tmp/checksums_sha256.txt](tmp/checksums_sha256.txt).
+- Snapshot derived from the current working tree at [Omniforge](.) with an observed dirty state (untracked Omniforge.code-workspace, local instruction file, and audit artifacts). Audit artifacts created during this session include [docs/Inventory/Omniforge-Inventory.md](docs/Inventory/Omniforge-Inventory.md), [tmp/inventory_phase2.tsv](tmp/inventory_phase2.tsv), [tmp/checksums_sha256.txt](tmp/checksums_sha256.txt), and the final archive [tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz](tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz). A backup branch was created and pushed as backup/workspace-snapshot-20260303 at commit 697ebae535ce5403c87f6289dbb860eaf7e2f251.
 
 Provenance confidence by major component:
 - CLI and core Python modules in [tool](tool): Confident authored (primary repo code, MIT license, project metadata aligns).
@@ -464,6 +474,17 @@ Commands executed during this audit session (terminal only):
 - `stat -c '%s %y' /home/apiadmin/Omniforge/tmp/inventory_phase2.tsv`
 - `python3 - <<'PY' ...` (generated tmp/checksums_sha256.txt with SHA-256 hashes)
 - `stat -c '%s %y' /home/apiadmin/Omniforge/tmp/checksums_sha256.txt`
+- `git -C /home/apiadmin/Omniforge status --porcelain=v1`
+- `python3 - <<'PY' ...` (created tmp/InventoryPacket/Omniforge-Repository-Inventory-Packet-20260303 staging directory)
+- `tar --sort=name --mtime='2026-03-03 00:00:00 UTC' --owner=0 --group=0 --numeric-owner -czf /home/apiadmin/Omniforge/tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz -C /home/apiadmin/Omniforge/tmp/InventoryPacket Omniforge-Repository-Inventory-Packet-20260303`
+- `tar -tzf /home/apiadmin/Omniforge/tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz`
+- `python3 - <<'PY' ...` (collected size/mtime for packet artifacts)
+- `git -C /home/apiadmin/Omniforge checkout -b backup/workspace-snapshot-20260303`
+- `git -C /home/apiadmin/Omniforge add docs/Inventory/Omniforge-Inventory.md`
+- `git -C /home/apiadmin/Omniforge commit -m "backup: workspace snapshot 20260303"`
+- `git -C /home/apiadmin/Omniforge push -u origin backup/workspace-snapshot-20260303`
+- `git -C /home/apiadmin/Omniforge rev-parse --abbrev-ref HEAD && git -C /home/apiadmin/Omniforge rev-parse HEAD && git -C /home/apiadmin/Omniforge status --porcelain=v1`
+- `date -Iseconds`
 
 ### I.2 Notable file list (entry points, manifests, infra configs, security-relevant files)
 
@@ -480,3 +501,15 @@ Commands executed during this audit session (terminal only):
 
 - Upstream licenses for vendored content under [vendor/oh-my-zsh](vendor/oh-my-zsh) and [vendor/plugins](vendor/plugins) are not present in this snapshot. Evidence needed: upstream LICENSE files or recorded attribution in vendor tree.
 - Whether documentation images in [image/README](image/README) are authored or third-party. Evidence needed: source attribution or creation records.
+
+### I.4 Final evidentiary archive
+
+- Archive filename: [tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz](tmp/Omniforge-Repository-Inventory-Packet-20260303.tar.gz)
+- Archive contents listing: Omniforge-Repository-Inventory-Packet-20260303/
+- Archive contents listing: Omniforge-Repository-Inventory-Packet-20260303/README.txt
+- Archive contents listing: Omniforge-Repository-Inventory-Packet-20260303/evidence/
+- Archive contents listing: Omniforge-Repository-Inventory-Packet-20260303/evidence/inventory_phase2.tsv
+- Archive contents listing: Omniforge-Repository-Inventory-Packet-20260303/manifests/
+- Archive contents listing: Omniforge-Repository-Inventory-Packet-20260303/manifests/checksums_sha256.txt
+- Archive contents listing: Omniforge-Repository-Inventory-Packet-20260303/report/
+- Archive contents listing: Omniforge-Repository-Inventory-Packet-20260303/report/Omniforge-Inventory.md
