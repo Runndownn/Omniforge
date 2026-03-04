@@ -46,80 +46,80 @@ Verify:
 
 ```mermaid
 flowchart LR
-		User[Personal Operator] --> CLI[Omniforge CLI]
-		CLI --> LocalArtifacts[Local Artifacts + Docs]
-		CLI --> SourceControl[Runndownn/Omniforge]
-		CLI --> Webhook[Approved Personal Webhook Destination]
+    User[Personal Operator] --> CLI[Omniforge CLI]
+    CLI --> LocalArtifacts[Local Artifacts + Docs]
+    CLI --> SourceControl[Runndownn/Omniforge]
+    CLI --> Webhook[Approved Personal Webhook Destination]
 ```
 
 ## 2) Trust-Boundary Data Flow
 
 ```mermaid
 flowchart TD
-		Input[settings.json + .zshrc] --> Process[Export/Sanitize]
-		Process --> Artifacts[artifacts/* + manifest]
-		Artifacts --> Apply[Apply/Restore]
-		Artifacts --> Publish[Package/Release]
-		Artifacts --> Broadcast[Webhook Broadcast]
-		subgraph LocalBoundary
-			Input
-			Process
-			Artifacts
-			Apply
-			Publish
-		end
-		subgraph ExternalBoundary
-			Broadcast
-			Source[(Remote Repos)]
-		end
-		Publish --> Source
+    Input[settings.json + .zshrc] --> Process[Export/Sanitize]
+    Process --> Artifacts[artifacts/* + manifest]
+    Artifacts --> Apply[Apply/Restore]
+    Artifacts --> Publish[Package/Release]
+    Artifacts --> Broadcast[Webhook Broadcast]
+    subgraph LocalBoundary
+        Input
+        Process
+        Artifacts
+        Apply
+        Publish
+    end
+    subgraph ExternalBoundary
+        Broadcast
+        Source[(Remote Repos)]
+    end
+    Publish --> Source
 ```
 
 ## 3) Export Workflow Sequence
 
 ```mermaid
 sequenceDiagram
-	participant User
-	participant CLI
-	participant FS as FileSystem
-	User->>CLI: Run export command
-	CLI->>FS: Locate and read settings
-	CLI->>FS: Copy redistributable assets
-	CLI->>FS: Write artifacts/settings.json + manifest
-	CLI-->>User: Success/failure status
+    participant User
+    participant CLI
+    participant FS as FileSystem
+    User->>CLI: Run export command
+    CLI->>FS: Locate and read settings
+    CLI->>FS: Copy redistributable assets
+    CLI->>FS: Write artifacts/settings.json + manifest
+    CLI-->>User: Success/failure status
 ```
 
 ## 4) Sanitizer Pipeline
 
 ```mermaid
 flowchart LR
-	S[Load .zshrc] --> R{Rule Engine}
-	R -->|Drop| D[PII/tokens/abs paths/denylisted aliases]
-	R -->|Keep| K[Theme, prompt, safe aliases]
-	K --> O[Write zshrc.portable]
-	D --> L[Sanitization report entry]
+    S[Load .zshrc] --> R{Rule Engine}
+    R -->|Drop| D[PII/tokens/abs paths/denylisted aliases]
+    R -->|Keep| K[Theme, prompt, safe aliases]
+    K --> O[Write zshrc.portable]
+    D --> L[Sanitization report entry]
 ```
 
 ## 5) Publish Workflow Sequence
 
 ```mermaid
 sequenceDiagram
-	participant CLI
-	participant Git
-	CLI->>CLI: Build archive + release metadata
-	CLI->>Git: Commit/tag (if enabled)
-	CLI->>Git: Push (optional)
-	Git-->>CLI: Status
+    participant CLI
+    participant Git
+    CLI->>CLI: Build archive + release metadata
+    CLI->>Git: Commit/tag (if enabled)
+    CLI->>Git: Push (optional)
+    Git-->>CLI: Status
 ```
 
 ## 6) Telemetry Pipeline (Current + Future Target)
 
 ```mermaid
 flowchart LR
-		Cmd[CLI Command] --> Log[Structured Command Logs]
-		Cmd --> Metric[Run Metrics]
-		Log --> Report[Monthly Evidence Report]
-		Metric --> Report
+    Cmd[CLI Command] --> Log[Structured Command Logs]
+    Cmd --> Metric[Run Metrics]
+    Log --> Report[Monthly Evidence Report]
+    Metric --> Report
 ```
 
 Current documented state: centralized telemetry storage/dashboard tooling is not yet implemented for this project scope.
@@ -128,9 +128,9 @@ Current documented state: centralized telemetry storage/dashboard tooling is not
 
 ```mermaid
 flowchart TD
-		T1[Unsanitized output risk] --> M1[Sanitize-first + dry-run]
-		T2[Destination misuse risk] --> M2[Webhook controls + review]
-		T3[Resource mixing risk] --> M3[Separation checklist + attestation]
-		T4[Dependency drift risk] --> M4[Test/lint cadence + SBOM optional]
+    T1[Unsanitized output risk] --> M1[Sanitize-first + dry-run]
+    T2[Destination misuse risk] --> M2[Webhook controls + review]
+    T3[Resource mixing risk] --> M3[Separation checklist + attestation]
+    T4[Dependency drift risk] --> M4[Test/lint cadence + SBOM optional]
 ```
 

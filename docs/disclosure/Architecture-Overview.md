@@ -1,4 +1,4 @@
-# Artifact 1 — Employer-Facing Technical Dossier
+# Architecture-Overview: Artifact 1 — Employer-Facing Technical Dossier
 
 **Title:** Employer-Facing Technical Dossier — Omniforge  
 **Owner:** Matthew McCloskey  
@@ -59,6 +59,7 @@ Current state is local-first with optional push/publish behavior. [EVIDENCE: REA
 - No use of employer systems or credentials.
 - No import of employer code/designs/data.
 - No running project workloads in employer cloud tenants.
+  - This was all built in from the start.
 
 ## 3) High-Level Architecture
 
@@ -75,31 +76,31 @@ Current state is local-first with optional push/publish behavior. [EVIDENCE: REA
 
 ```mermaid
 flowchart LR
-		User[Personal Operator] --> CLI[Omniforge CLI]
-		CLI --> LocalFS[Local Filesystem: artifacts/, docs/, tmp/]
-		CLI --> GitRemote[Personal Source Control Remote]
-		CLI --> Webhook[Approved Personal Webhook Destination]
-		subgraph TrustBoundary1[Local Runtime Boundary]
-			CLI
-			LocalFS
-		end
-		subgraph TrustBoundary2[External Network Boundary]
-			GitRemote
-			Webhook
-		end
+    User[Personal Operator] --> CLI[Omniforge CLI]
+    CLI --> LocalFS[Local Filesystem: artifacts/, docs/, tmp/]
+    CLI --> GitRemote[Personal Source Control Remote]
+    CLI --> Webhook[Approved Personal Webhook Destination]
+    subgraph TrustBoundary1[Local Runtime Boundary]
+        CLI
+        LocalFS
+    end
+    subgraph TrustBoundary2[External Network Boundary]
+        GitRemote
+        Webhook
+    end
 ```
 
 ### Data Flow with Trust Boundaries
 
 ```mermaid
 flowchart TD
-		A[settings.json + .zshrc inputs] --> B[Export/Sanitize Process]
-		B --> C[artifacts/settings.json]
-		B --> D[artifacts/zshrc.portable]
-		C --> E[manifest checksums]
-		D --> E
-		E --> F[Package/Publish optional]
-		E --> G[Webhook Broadcast optional]
+    A[settings.json + .zshrc inputs] --> B[Export/Sanitize Process]
+    B --> C[artifacts/settings.json]
+    B --> D[artifacts/zshrc.portable]
+    C --> E[manifest checksums]
+    D --> E
+    E --> F[Package/Publish optional]
+    E --> G[Webhook Broadcast optional]
 ```
 
 Diagram details and source-aligned diagrams are in `docs/disclosure/Diagrams.md`.

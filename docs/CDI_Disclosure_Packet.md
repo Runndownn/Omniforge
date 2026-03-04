@@ -1,6 +1,6 @@
 # Employer-Facing Conflict of Interest / CDI Disclosure Packet
 
-**Owner:** [PERSONAL_OWNER]  
+**Owner:** Matthew McCloskry
 **Version:** v1.0-draft  
 **Date:** 2026-03-04  
 **Audience:** Compliance/HR, Legal, Security/IT, Technical Reviewer

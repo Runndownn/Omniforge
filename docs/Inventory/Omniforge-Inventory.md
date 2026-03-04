@@ -264,11 +264,10 @@ This diagram reflects the observed CI/CD and local build posture: local Makefile
 Mind map: .github
 
 ```mermaid
-mindmap
-    root((.github/))
-        README.md
-        workflows/
-            release.yml
+flowchart TD
+    GH[.github/] --> GH_README[README.md]
+    GH --> GH_WF[workflows/]
+    GH_WF --> GH_RELEASE[release.yml]
 ```
 
 This mind map shows repository automation and GitHub-facing documentation, centered on the release workflow.
@@ -276,15 +275,14 @@ This mind map shows repository automation and GitHub-facing documentation, cente
 Mind map: artifacts
 
 ```mermaid
-mindmap
-    root((artifacts/))
-        settings.json
-        zshrc.portable
-        manifest.json
-        assets/
-            README.md
-        fonts/
-            README.md
+flowchart TD
+    ART[artifacts/] --> ART_SETTINGS[settings.json]
+    ART --> ART_ZSH[zshrc.portable]
+    ART --> ART_MANIFEST[manifest.json]
+    ART --> ART_ASSETS[assets/]
+    ART_ASSETS --> ART_ASSETS_README[README.md]
+    ART --> ART_FONTS[fonts/]
+    ART_FONTS --> ART_FONTS_README[README.md]
 ```
 
 This mind map highlights generated payloads produced by export and sanitize steps, alongside supporting asset/font folders.
@@ -292,14 +290,13 @@ This mind map highlights generated payloads produced by export and sanitize step
 Mind map: docs
 
 ```mermaid
-mindmap
-    root((docs/))
-        README.md
-        USAGE.md
-        SANITIZATION_REPORT.md
-        DIAGRAMS.md
-        Inventory/
-            Omniforge-Inventory.md
+flowchart TD
+    DOCS[docs/] --> DOCS_README[README.md]
+    DOCS --> DOCS_USAGE[USAGE.md]
+    DOCS --> DOCS_SAN[SANITIZATION_REPORT.md]
+    DOCS --> DOCS_DIAG[DIAGRAMS.md]
+    DOCS --> DOCS_INV[Inventory/]
+    DOCS_INV --> DOCS_INV_REPORT[Omniforge-Inventory.md]
 ```
 
 This mind map captures the documentation corpus used by operators and auditors, including the inventory report produced in this audit.
@@ -307,11 +304,10 @@ This mind map captures the documentation corpus used by operators and auditors, 
 Mind map: image
 
 ```mermaid
-mindmap
-    root((image/))
-        README/
-            1761736392562.png
-            1761736402115.png
+flowchart TD
+    IMG[image/] --> IMG_README[README/]
+    IMG_README --> IMG_1[1761736392562.png]
+    IMG_README --> IMG_2[1761736402115.png]
 ```
 
 This mind map indicates binary documentation images stored under the image/README directory.
@@ -319,12 +315,11 @@ This mind map indicates binary documentation images stored under the image/READM
 Mind map: scripts
 
 ```mermaid
-mindmap
-    root((scripts/))
-        README.md
-        apply_local.sh
-        install_prereqs.ps1
-        install_wsl.sh
+flowchart TD
+    SCRIPTS[scripts/] --> SCRIPTS_README[README.md]
+    SCRIPTS --> SCRIPTS_APPLY[apply_local.sh]
+    SCRIPTS --> SCRIPTS_PREREQS[install_prereqs.ps1]
+    SCRIPTS --> SCRIPTS_WSL[install_wsl.sh]
 ```
 
 This mind map shows the platform-specific automation scripts that wrap the CLI.
@@ -332,10 +327,9 @@ This mind map shows the platform-specific automation scripts that wrap the CLI.
 Mind map: tests
 
 ```mermaid
-mindmap
-    root((tests/))
-        README.md
-        test_sanitizer.py
+flowchart TD
+    TESTS[tests/] --> TESTS_README[README.md]
+    TESTS --> TESTS_SAN[test_sanitizer.py]
 ```
 
 This mind map shows the current test suite focus, primarily on the sanitizer.
@@ -343,14 +337,13 @@ This mind map shows the current test suite focus, primarily on the sanitizer.
 Mind map: tmp
 
 ```mermaid
-mindmap
-    root((tmp/))
-        README.md
-        inventory_phase2.tsv
-        checksums_sha256.txt
-        pytest/
-            README.md
-            test_strip_denylisted_aliases0/
+flowchart TD
+    TMP[tmp/] --> TMP_README[README.md]
+    TMP --> TMP_INV[inventory_phase2.tsv]
+    TMP --> TMP_SHA[checksums_sha256.txt]
+    TMP --> TMP_PYTEST[pytest/]
+    TMP_PYTEST --> TMP_PYTEST_README[README.md]
+    TMP_PYTEST --> TMP_CASE[test_strip_denylisted_aliases0/]
 ```
 
 This mind map shows ephemeral outputs, including audit artifacts generated during this process.
@@ -358,16 +351,15 @@ This mind map shows ephemeral outputs, including audit artifacts generated durin
 Mind map: tool
 
 ```mermaid
-mindmap
-    root((tool/))
-        cli.py
-        exporter.py
-        sanitizer.py
-        applier.py
-        installer.py
-        github_publisher.py
-        validators.py
-        README.md
+flowchart TD
+    TOOL[tool/] --> TOOL_CLI[cli.py]
+    TOOL --> TOOL_EXP[exporter.py]
+    TOOL --> TOOL_SAN[sanitizer.py]
+    TOOL --> TOOL_AP[applier.py]
+    TOOL --> TOOL_INST[installer.py]
+    TOOL --> TOOL_PUB[github_publisher.py]
+    TOOL --> TOOL_VAL[validators.py]
+    TOOL --> TOOL_README[README.md]
 ```
 
 This mind map represents the core Python implementation modules and the CLI entry point.
@@ -375,13 +367,12 @@ This mind map represents the core Python implementation modules and the CLI entr
 Mind map: vendor
 
 ```mermaid
-mindmap
-    root((vendor/))
-        README.md
-        oh-my-zsh/
-            README.md
-        plugins/
-            README.md
+flowchart TD
+    VENDOR[vendor/] --> VENDOR_README[README.md]
+    VENDOR --> VENDOR_OMZ[oh-my-zsh/]
+    VENDOR_OMZ --> VENDOR_OMZ_README[README.md]
+    VENDOR --> VENDOR_PLUGINS[plugins/]
+    VENDOR_PLUGINS --> VENDOR_PLUGINS_README[README.md]
 ```
 
 This mind map shows third-party resources kept for offline installation and their associated notes.
@@ -389,15 +380,14 @@ This mind map shows third-party resources kept for offline installation and thei
 Mind map: windows_terminal_portable_profile.egg-info
 
 ```mermaid
-mindmap
-    root((windows_terminal_portable_profile.egg-info/))
-        PKG-INFO
-        README.md
-        SOURCES.txt
-        requires.txt
-        entry_points.txt
-        dependency_links.txt
-        top_level.txt
+flowchart TD
+    EGG[windows_terminal_portable_profile.egg-info/] --> EGG_PKG[PKG-INFO]
+    EGG --> EGG_README[README.md]
+    EGG --> EGG_SOURCES[SOURCES.txt]
+    EGG --> EGG_REQ[requires.txt]
+    EGG --> EGG_ENTRY[entry_points.txt]
+    EGG --> EGG_DEPS[dependency_links.txt]
+    EGG --> EGG_TOP[top_level.txt]
 ```
 
 This mind map reflects generated packaging metadata created by setuptools and pip.
