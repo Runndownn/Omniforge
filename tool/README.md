@@ -10,6 +10,7 @@ The `tool` package holds the production code paths that power the portable profi
 - `applier.py` writes sanitized profiles back to disk with safe backups.
 - `installer.py` installs optional prerequisites such as WSL and Oh My Zsh.
 - `github_publisher.py` prepares Git release artifacts, tags, and pushes.
+- `messaging.py` sends selected docs/artifacts to webhook-based messaging services.
 - `validators.py` provides shared environment and manifest checks.
 
 ```mermaid

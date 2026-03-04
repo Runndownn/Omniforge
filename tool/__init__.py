@@ -8,6 +8,7 @@ __all__ = [
     "exporter",
     "github_publisher",
     "installer",
+    "messaging",
     "sanitizer",
     "validators",
 ]

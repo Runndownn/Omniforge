@@ -1,0 +1,81 @@
+path	type	ext	size	mtime_utc
+.git	dir		4096	2026-03-03T08:32:47.180173+00:00
+.github	dir		4096	2025-12-04T23:01:21.296126+00:00
+.github/README.md	file	.md	14133	2025-12-04T23:01:21.296126+00:00
+.github/workflows	dir		4096	2025-12-04T23:01:21.296126+00:00
+.github/workflows/release.yml	file	.yml	1257	2025-12-04T23:01:21.296126+00:00
+.gitignore	file		180	2025-12-04T23:01:21.296126+00:00
+LICENSE	file		1068	2025-12-04T23:01:21.296126+00:00
+Makefile	file		1454	2025-12-04T23:01:21.296126+00:00
+Omniforge.code-workspace	file	.code-workspace	43	2026-03-03T08:26:54.103671+00:00
+README.md	file	.md	14133	2025-12-04T23:01:21.296126+00:00
+README_remote_preview.txt	file	.txt	14151	2025-12-04T23:01:21.296126+00:00
+artifacts	dir		4096	2025-12-04T23:01:21.296126+00:00
+artifacts/README.md	file	.md	2671	2025-12-04T23:01:21.296126+00:00
+artifacts/assets	dir		4096	2025-12-04T23:01:21.296126+00:00
+artifacts/assets/.gitkeep	file		0	2025-12-04T23:01:21.296126+00:00
+artifacts/assets/README.md	file	.md	1709	2025-12-04T23:01:21.296126+00:00
+artifacts/fonts	dir		4096	2025-12-04T23:01:21.296126+00:00
+artifacts/fonts/.gitkeep	file		0	2025-12-04T23:01:21.296126+00:00
+artifacts/fonts/README.md	file	.md	1449	2025-12-04T23:01:21.296126+00:00
+artifacts/manifest.json	file	.json	1008	2025-12-04T23:01:21.296126+00:00
+artifacts/settings.json	file	.json	1768	2025-12-04T23:01:21.296126+00:00
+artifacts/zshrc.portable	file	.portable	6094	2025-12-04T23:01:21.296126+00:00
+docs	dir		4096	2026-03-03T08:38:37.868682+00:00
+docs/DIAGRAMS.md	file	.md	1919	2025-12-04T23:01:21.296126+00:00
+docs/Inventory	dir		4096	2026-03-03T08:38:37.920681+00:00
+docs/Inventory/Omniforge-Inventory.md	file	.md	3761	2026-03-03T08:39:02.780433+00:00
+docs/README.md	file	.md	1734	2025-12-04T23:01:21.296126+00:00
+docs/SANITIZATION_REPORT.md	file	.md	1529	2025-12-04T23:01:21.296126+00:00
+docs/USAGE.md	file	.md	3251	2025-12-04T23:01:21.296126+00:00
+geezer_data.instructions.md	file	.md	151	2026-03-03T08:39:02.780433+00:00
+image	dir		4096	2025-12-04T23:01:21.296126+00:00
+image/README	dir		4096	2025-12-04T23:01:21.296126+00:00
+image/README/1761736392562.png	file	.png	44881	2025-12-04T23:01:21.296126+00:00
+image/README/1761736402115.png	file	.png	44881	2025-12-04T23:01:21.296126+00:00
+pyproject.toml	file	.toml	1214	2025-12-04T23:01:21.296126+00:00
+requirements.txt	file	.txt	39	2025-12-04T23:01:21.296126+00:00
+scripts	dir		4096	2025-12-04T23:01:21.296126+00:00
+scripts/README.md	file	.md	1454	2025-12-04T23:01:21.296126+00:00
+scripts/apply_local.sh	file	.sh	791	2025-12-04T23:01:21.296126+00:00
+scripts/install_prereqs.ps1	file	.ps1	1691	2025-12-04T23:01:21.296126+00:00
+scripts/install_wsl.sh	file	.sh	380	2025-12-04T23:01:21.296126+00:00
+tests	dir		4096	2025-12-04T23:01:21.296126+00:00
+tests/README.md	file	.md	1296	2025-12-04T23:01:21.296126+00:00
+tests/test_sanitizer.py	file	.py	583	2025-12-04T23:01:21.296126+00:00
+tmp	dir		4096	2025-12-04T23:01:21.296126+00:00
+tmp/README.md	file	.md	1000	2025-12-04T23:01:21.296126+00:00
+tmp/pytest	dir		4096	2025-12-04T23:01:21.300126+00:00
+tmp/pytest/README.md	file	.md	828	2025-12-04T23:01:21.300126+00:00
+tmp/pytest/test_strip_denylisted_aliases0	dir		4096	2025-12-04T23:01:21.300126+00:00
+tmp/pytest/test_strip_denylisted_aliases0/.zshrc	file		48	2025-12-04T23:01:21.300126+00:00
+tmp/pytest/test_strip_denylisted_aliases0/README.md	file	.md	704	2025-12-04T23:01:21.300126+00:00
+tmp/pytest/test_strip_denylisted_aliases0/manifest.json	file	.json	297	2025-12-04T23:01:21.300126+00:00
+tmp/pytest/test_strip_denylisted_aliases0/portable	file		19	2025-12-04T23:01:21.300126+00:00
+tmp/pytest/test_strip_denylisted_aliases0/report.md	file	.md	193	2025-12-04T23:01:21.300126+00:00
+tool	dir		4096	2025-12-04T23:01:21.300126+00:00
+tool/README.md	file	.md	3785	2025-12-04T23:01:21.300126+00:00
+tool/__init__.py	file	.py	210	2025-12-04T23:01:21.300126+00:00
+tool/applier.py	file	.py	6796	2025-12-04T23:01:21.300126+00:00
+tool/cli.py	file	.py	7384	2025-12-04T23:01:21.300126+00:00
+tool/exporter.py	file	.py	4732	2025-12-04T23:01:21.300126+00:00
+tool/github_publisher.py	file	.py	3148	2025-12-04T23:01:21.300126+00:00
+tool/installer.py	file	.py	3794	2025-12-04T23:01:21.300126+00:00
+tool/sanitizer.py	file	.py	4595	2025-12-04T23:01:21.300126+00:00
+tool/validators.py	file	.py	4799	2025-12-04T23:01:21.300126+00:00
+vendor	dir		4096	2025-12-04T23:01:21.300126+00:00
+vendor/README.md	file	.md	1009	2025-12-04T23:01:21.300126+00:00
+vendor/oh-my-zsh	dir		4096	2025-12-04T23:01:21.300126+00:00
+vendor/oh-my-zsh/.gitkeep	file		0	2025-12-04T23:01:21.300126+00:00
+vendor/oh-my-zsh/README.md	file	.md	803	2025-12-04T23:01:21.300126+00:00
+vendor/plugins	dir		4096	2025-12-04T23:01:21.300126+00:00
+vendor/plugins/.gitkeep	file		0	2025-12-04T23:01:21.300126+00:00
+vendor/plugins/README.md	file	.md	748	2025-12-04T23:01:21.300126+00:00
+windows_terminal_portable_profile.egg-info	dir		4096	2025-12-04T23:01:21.300126+00:00
+windows_terminal_portable_profile.egg-info/PKG-INFO	file		4432	2025-12-04T23:01:21.300126+00:00
+windows_terminal_portable_profile.egg-info/README.md	file	.md	1004	2025-12-04T23:01:21.300126+00:00
+windows_terminal_portable_profile.egg-info/SOURCES.txt	file	.txt	542	2025-12-04T23:01:21.300126+00:00
+windows_terminal_portable_profile.egg-info/dependency_links.txt	file	.txt	1	2025-12-04T23:01:21.300126+00:00
+windows_terminal_portable_profile.egg-info/entry_points.txt	file	.txt	46	2025-12-04T23:01:21.300126+00:00
+windows_terminal_portable_profile.egg-info/requires.txt	file	.txt	110	2025-12-04T23:01:21.300126+00:00
+windows_terminal_portable_profile.egg-info/top_level.txt	file	.txt	5	2025-12-04T23:01:21.300126+00:00

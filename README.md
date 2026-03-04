@@ -240,6 +240,7 @@ flowchart LR
 | `python -m tool.cli apply --mode default\|copy\|promote` | `tool.applier.apply_profile`                     | Applies sanitized artifacts with timestamped backups and optional dry run.         |
 | `python -m tool.cli package`                           | `tool.github_publisher.publish`                  | Zips artifacts, prepares release metadata, publishes when configured.              |
 | `python -m tool.cli diagnostics`                       | `tool.validators.run_diagnostics`                | Validates manifest hashes, git status, and environment readiness.                  |
+| `python -m tool.cli broadcast --service slack\|discord\|teams --webhook-url ...`       | `tool.messaging.broadcast_files`                 | Sends key docs/artifacts with service-specific payload formatting and chunking.       |
 
 ## Artifact Pipeline
 

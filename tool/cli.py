@@ -15,6 +15,14 @@ from .applier import ApplyMode, apply_profile
 from .exporter import export_windows_terminal_settings
 from .github_publisher import publish
 from .installer import install_prerequisites
+from .messaging import (
+    DEFAULT_BROADCAST_FILES,
+    MessagingConfig,
+    ServiceMode,
+    broadcast_files,
+    resolve_max_chars,
+    resolve_webhook_url,
+)
 from .sanitizer import sanitize_zshrc
 from .validators import resolve_windows_terminal_path, run_diagnostics
 
@@ -39,6 +47,21 @@ def _sanitize_action() -> None:
 
 def _install_action() -> None:
     install_prerequisites()
+
+
+def _broadcast_action() -> None:
+    try:
+        webhook_url = resolve_webhook_url()
+    except Exception as exc:
+        console.print(f"[red]{exc}[/red]")
+        console.print(
+            "Set [cyan]OMNIFORGE_WEBHOOK_URL[/cyan] or use the CLI command with [cyan]--webhook-url[/cyan]."
+        )
+        return
+
+    config = MessagingConfig(webhook_url=webhook_url, service="generic")
+    sent = broadcast_files(DEFAULT_BROADCAST_FILES, config)
+    console.print(f"[green]Broadcast complete[/green]: {sent} message chunk(s) sent")
 
 
 def _menu_items() -> dict[str, MenuItem]:
@@ -79,6 +102,11 @@ def _menu_items() -> dict[str, MenuItem]:
             action=lambda: run_diagnostics(),
         ),
         "8": MenuItem(
+            label="Broadcast docs to webhook",
+            description="Sends key docs/artifacts to a messaging webhook in chunks.",
+            action=_broadcast_action,
+        ),
+        "9": MenuItem(
             label="Exit",
             description="Quit the menu",
             action=lambda: None,
@@ -172,7 +200,7 @@ def menu() -> None:
             console.print("[red]Invalid selection[/red]")
             continue
         item = items[choice]
-        if choice == "8":
+        if choice == "9":
             console.print("[green]Goodbye![/green]")
             break
         try:
@@ -224,6 +252,40 @@ def package(
 def diagnostics() -> None:
     """Run diagnostic checks."""
     run_diagnostics()
+
+
+@app.command()
+def broadcast(
+    webhook_url: str | None = typer.Option(None, "--webhook-url", help="Messaging webhook URL"),
+    service: ServiceMode = typer.Option(
+        "generic",
+        "--service",
+        help="Payload mode: generic, slack, discord, or teams",
+        case_sensitive=False,
+    ),
+    file: list[Path] | None = typer.Option(
+        None,
+        "--file",
+        help="File to send (repeatable). Defaults to README, sanitization report, and manifest.",
+    ),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print chunks locally without sending"),
+    max_chars: int | None = typer.Option(
+        None,
+        "--max-chars",
+        help="Maximum characters per message chunk (defaults are service-specific)",
+    ),
+) -> None:
+    """Broadcast selected files to a webhook-backed messaging service."""
+    resolved_url = resolve_webhook_url(webhook_url)
+    config = MessagingConfig(
+        webhook_url=resolved_url,
+        service=service,
+        dry_run=dry_run,
+        max_chars=resolve_max_chars(service, max_chars),
+    )
+    paths = file or DEFAULT_BROADCAST_FILES
+    sent = broadcast_files(paths, config)
+    console.print(f"[green]Broadcast complete[/green]: {sent} message chunk(s) sent")
 
 
 def main() -> None:
